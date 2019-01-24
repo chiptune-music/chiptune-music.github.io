@@ -28,7 +28,7 @@ a:hover,a:active{color:#666}
 .ovr_msg:not(.on) .blk{background:rgba(0,0,0,0);pointer-events:none}
 .ovr_msg .panelb{background:#000}.ovr_msg .blk{background:rgba(255,255,255,.5)}.ovr_msg:not(.on) .blk{background:rgba(255,255,255,0)}
 
-.start button,.start input{border:0;background:transparent}>
+.start button,.start input{border:0;background:transparent}
 .start input{padding:0 0 0 4px;border-bottom:1px solid #fff}
 .start .nav{display:flex;flex-wrap:wrap;line-height:2em}
 .start .nav svg{width:1.5em;height:2em;vertical-align:top}
