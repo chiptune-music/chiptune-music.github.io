@@ -34,7 +34,6 @@ a:hover,a:active{color:#666}
 .start .nav svg{width:1.5em;height:2em;vertical-align:top}
 .start .nav a{min-width:2em;font-size:1em;overflow:hidden}
 .start .nav button{padding:0;border:0;min-width:2em;font-size:1em;line-height:0;overflow:hidden}
-.start .nav .flex{display:flex}
 .start .nav .fit{flex:auto;min-width:240px}
 .start .nav .img{height:2em}
 
@@ -53,6 +52,10 @@ a:hover,a:active{color:#666}
 .link0 a,
 .link0 button{outline-offset:-3px}
 .link0 a:hover,.link0 button:hover{outline:1px dashed #f60}
+
+.search{display:flex}
+.search input{flex:auto;width:80px}
+.search button{min-width:80px}
 
 .post .btn-play .b{display:none}
 #var playstate1,.post .null{display:none}
