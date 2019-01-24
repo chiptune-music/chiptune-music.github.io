@@ -1,0 +1,72 @@
+html{line-height:1}
+body{margin:0;padding:0;font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;overscroll-behavior:contain}
+html,body{height:100%}
+a{text-decoration:none}
+a:hover{text-decoration:initial}
+button,label{cursor:pointer}
+button,input{color:inherit;background:inherit}
+iframe{border:0}
+
+<s_if_var_background-color>html{background-color:[##_var_background-color_##]}</s_if_var_background-color>
+<s_if_var_font-color>html,a{color:[##_var_font-color_##]}
+svg{fill:[##_var_font-color_##]}</s_if_var_font-color>
+<s_if_var_link-active-color>a:hover,a:active{color:[##_var_link-active-color_##]}</s_if_var_link-active-color>
+
+.lib-svg{display:none}
+
+.bg{z-index:-1;position:absolute;width:0;height:0;overflow:hidden}
+
+.ovr_msg{margin:auto;z-index:1;position:fixed;top:0em;left:0;right:0;max-width:40em;line-height:2em;transition:top .4s}
+.ovr_msg svg{width:1.5em;height:1.5em;vertical-align:middle}
+.ovr_msg .bk2,
+.ovr_msg a{padding:0 0 0 4px}
+.ovr_msg .bk{text-overflow:ellipsis;overflow:hidden;white-space:nowrap}
+.ovr_msg .fd{display:block;width:100%;text-align:left}
+.ovr_msg button{float:right;border:0;height:2em;background:inherit;font-size:1em}
+.ovr_msg .blk{z-index:-1;border:0;position:fixed;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.5);outline:none;transition:background-color .4s}
+.ovr_msg:not(.on){top:-6em}
+.ovr_msg:not(.on) .blk{background:rgba(0,0,0,0);pointer-events:none}<s_if_var_preset-overlay-message>
+[##_var_preset-overlay-message_##]</s_if_var_preset-overlay-message>
+
+.start button,.start input{border:0;background:transparent}<s_not_var_font-color>
+.start input{padding:0 0 0 4px;border-bottom:1px solid #000}</s_not_var_font-color><s_if_var_font-color>
+.start input{padding:0 0 0 4px;border-bottom:1px solid [##_var_font-color_##]}</s_if_var_font-color>
+.start .nav{display:flex;flex-wrap:wrap;line-height:2em}
+.start .nav svg{width:1.5em;height:2em;vertical-align:top}
+.start .nav a{min-width:2em;font-size:1em;overflow:hidden}
+.start .nav button{padding:0;border:0;min-width:2em;font-size:1em;line-height:0;overflow:hidden}
+.start .nav .fit{flex:auto;min-width:240px}
+.start .nav .img{height:2em}
+
+.charm{position:absolute;left:0em;width:10em;transition:left .4s}
+.charm:not(.on){left:-10em}
+.charm:not(.on)+.frame{left:0em}
+.charm a{display:block;line-height:1.5em}
+.charm ul{margin:0;padding:0;list-style:none}
+.charm ul a{padding:0 0 0 8px}
+.charm svg{width:1em;height:1em;vertical-align:middle}
+
+.frame{position:absolute;left:10em;right:0;transition:left .4s}
+.frame .frame-title{margin:0;font-size:1em}
+.frame .frame-title a{display:block;padding:4px}
+
+.link0 a,
+.link0 button{outline-offset:-3px}<s_not_var_link-active-color>
+.link0 a:hover,.link0 button:hover{outline:1px dashed #000}</s_not_var_link-active-color><s_if_var_link-active-color>
+.link0 a:hover,.link0 button:hover{outline:1px dashed [##_var_link-active-color_##]}</s_if_var_link-active-color>
+
+.post .btn-play .b{display:none}
+#var playstate1,.post .null{display:none}
+#var playstate2,.post .null{display:inline-block}
+
+@media screen and (max-width:500px){
+
+}
+@media screen and (min-width:501px){
+	.start .nav{line-height:1.5em}
+	.start .nav .fit{max-width:360px}
+	.start .nav svg{width:1em;height:1.5em}
+	.start .nav a{min-width:1.5em}
+	.start .nav button{min-width:1.5em}
+	.start .nav .img{height:1.5em}
+}
