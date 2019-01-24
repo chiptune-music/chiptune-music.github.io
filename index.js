@@ -1,7 +1,9 @@
+var el={};
 addEventListener("message",msg);
 function msg(e){
 	var d=e.data;
 	if(d[0]=="init-cdn"){
+		mod.dom.var(el);
 		removeEventListener("message",msg);
 
 		el["lib-svg"].innerHTML=d[1];
