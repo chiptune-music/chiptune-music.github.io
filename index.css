@@ -7,10 +7,10 @@ button,label{cursor:pointer}
 button,input{color:inherit;background:inherit}
 iframe{border:0}
 
-<s_if_var_background-color>html{background-color:[##_var_background-color_##]}</s_if_var_background-color>
-<s_if_var_font-color>html,a{color:[##_var_font-color_##]}
-svg{fill:[##_var_font-color_##]}</s_if_var_font-color>
-<s_if_var_link-active-color>a:hover,a:active{color:[##_var_link-active-color_##]}</s_if_var_link-active-color>
+html{background-color:#000}
+html,a{color:#fff}
+svg{fill:#fff}
+a:hover,a:active{color:#666}
 
 .lib-svg{display:none}
 
@@ -25,12 +25,11 @@ svg{fill:[##_var_font-color_##]}</s_if_var_font-color>
 .ovr_msg button{float:right;border:0;height:2em;background:inherit;font-size:1em}
 .ovr_msg .blk{z-index:-1;border:0;position:fixed;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.5);outline:none;transition:background-color .4s}
 .ovr_msg:not(.on){top:-6em}
-.ovr_msg:not(.on) .blk{background:rgba(0,0,0,0);pointer-events:none}<s_if_var_preset-overlay-message>
-[##_var_preset-overlay-message_##]</s_if_var_preset-overlay-message>
+.ovr_msg:not(.on) .blk{background:rgba(0,0,0,0);pointer-events:none}
+.ovr_msg .panelb{background:#000}.ovr_msg .blk{background:rgba(255,255,255,.5)}.ovr_msg:not(.on) .blk{background:rgba(255,255,255,0)}
 
-.start button,.start input{border:0;background:transparent}<s_not_var_font-color>
-.start input{padding:0 0 0 4px;border-bottom:1px solid #000}</s_not_var_font-color><s_if_var_font-color>
-.start input{padding:0 0 0 4px;border-bottom:1px solid [##_var_font-color_##]}</s_if_var_font-color>
+.start button,.start input{border:0;background:transparent}>
+.start input{padding:0 0 0 4px;border-bottom:1px solid #fff}
 .start .nav{display:flex;flex-wrap:wrap;line-height:2em}
 .start .nav svg{width:1.5em;height:2em;vertical-align:top}
 .start .nav a{min-width:2em;font-size:1em;overflow:hidden}
@@ -51,9 +50,8 @@ svg{fill:[##_var_font-color_##]}</s_if_var_font-color>
 .frame .frame-title a{display:block;padding:4px}
 
 .link0 a,
-.link0 button{outline-offset:-3px}<s_not_var_link-active-color>
-.link0 a:hover,.link0 button:hover{outline:1px dashed #000}</s_not_var_link-active-color><s_if_var_link-active-color>
-.link0 a:hover,.link0 button:hover{outline:1px dashed [##_var_link-active-color_##]}</s_if_var_link-active-color>
+.link0 button{outline-offset:-3px}
+.link0 a:hover,.link0 button:hover{outline:1px dashed #f60}
 
 .post .btn-play .b{display:none}
 #var playstate1,.post .null{display:none}
