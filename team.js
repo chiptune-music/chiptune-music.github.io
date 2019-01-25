@@ -31,6 +31,7 @@ var x=xs(function(){
 			document.head.appendChild(a);
 		}else{
 			document.head.appendChild(c[0]);
+			r1();
 		}
 	}
 });
