@@ -16,7 +16,7 @@ function init(body){
 
 			if(body){
 				el.frame.textContent="";
-				for(var i=body.length;i>0;i--)el.frame.appendChild(body[i]);
+				for(var i=body.length-1;i>=0;i--)el.frame.appendChild(body[i]);
 			}
 
 			el["lib-svg"].innerHTML=d[1];
