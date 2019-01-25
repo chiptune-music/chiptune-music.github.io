@@ -22,7 +22,7 @@ var x=xs(function(){
 		bd.removeChild(ch[0]);
 	}
 	document.body.innerHTML=m[1];
-	m=/(<script[\w\W]*)<\/head>/.exec(s);
+	m=/<title>([\w\W]*)<\/head>/.exec(s);
 	d.innerHTML=m[1];
 	r1();
 	function r1(){
