@@ -27,7 +27,7 @@ var x=xs(function(){
 	r1();
 	function r1(){
 		if(!c.length){
-			init();
+			init(body);
 			return;
 		}
 		var a,b;
