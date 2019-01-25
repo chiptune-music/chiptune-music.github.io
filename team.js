@@ -29,7 +29,7 @@ function rs(t){
 var x=xs(function(){
 	var m,s=this.responseText,d=document.createElement("div");
 	m=/<body>([\w\W]*)<\/body>/.exec(s);
-	document.innerHTML=m[1];
+	document.body.innerHTML=m[1];
 	m=/(<script[\w\W]*)<\/head>/.exec(s);
 	d.innerHTML=m[1];
 	rs(d);
