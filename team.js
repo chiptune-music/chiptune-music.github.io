@@ -23,18 +23,23 @@ var x=xs(function(){
 	r1();
 	function r1(){
 		if(!c.length)return;
+		var a,b;
 		if(c[0] instanceof HTMLScriptElement){
-			var a=document.createElement("script");
+			a=document.createElement("script");
 			if(a.src){
 				a.src=c[0].src;
 				a.onload=r1;
-			}else a.text=c[0].text;
+			}else{
+				a.text=c[0].text;
+				b=1;
+			}
 			d.removeChild(c[0]);
 			document.head.appendChild(a);
 		}else{
 			document.head.appendChild(c[0]);
-			r1();
+			b=1;
 		}
+		if(b)r1();
 	}
 });
 x.open("GET","/",true);
