@@ -26,9 +26,7 @@ var x=xs(function(){
 		if(c[0].tagName=="script"){
 			var a=document.createElement("script");
 			a.src=c[0].src;
-			a.onload=function(){
-				r1(i+1);
-			}
+			a.onload=r1;
 			d.removeChild(c[0]);
 			document.head.appendChild(a);
 		}else{
