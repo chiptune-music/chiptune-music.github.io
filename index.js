@@ -14,8 +14,10 @@ function init(body){
 			removeEventListener("message",msg);
 			document.body.removeChild(frm);
 
-			el.frame.textContent="";
-			for(var i=body.length;i>0;i--)el.frame.appendChild(body[i]);
+			if(body){
+				el.frame.textContent="";
+				for(var i=body.length;i>0;i--)el.frame.appendChild(body[i]);
+			}
 
 			el["lib-svg"].innerHTML=d[1];
 
