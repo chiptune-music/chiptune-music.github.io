@@ -14,6 +14,9 @@ function init(body){
 			removeEventListener("message",msg);
 			document.body.removeChild(frm);
 
+			el.frame.textContent="";
+			for(var i=body.length;i>0;i--)el.frame.appendChild(body[i]);
+
 			el["lib-svg"].innerHTML=d[1];
 
 			mod.chiptune.config.html_control=d[3];
@@ -51,7 +54,7 @@ function secondsToHms(d){
 }
 function EndDOM(a){document.addEventListener("DOMContentLoaded",a)}
 function $qs(a){return document.querySelector(a)}
-function $bk(a){return a.cancelBubble=true;a.stopPropagation()}
+function $bk(a){a.cancelBubble=true;a.stopPropagation()}
 function charm(t,a){
 	if(a.classList.toggle('on'))onclick=evt;
 	else onclick=null;
