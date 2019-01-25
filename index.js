@@ -1,6 +1,6 @@
 var el={},audio_player,audio_meta={};
 EndDOM(init);
-function init(){
+function init(body){
 	var frm=document.createElement("div");
 	frm.innerHTML='<iframe class="lib-svg" src="https://chiptune-db.tistory.com/?init"></iframe>';
 	frm=frm.firstChild;
@@ -12,7 +12,7 @@ function init(){
 		if(d[0]=="init-cdn"){
 			mod.dom.var(el);
 			removeEventListener("message",msg);
-			frm.remove();
+			document.body.removeChild(frm);
 
 			el["lib-svg"].innerHTML=d[1];
 

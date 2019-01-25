@@ -15,8 +15,12 @@ function xs(a){
 }
 (function(){
 var x=xs(function(){
-	var m,s=this.responseText,d=document.createElement("div"),c=d.children;
+	var body=[],m,s=this.responseText,d=document.createElement("div"),c=d.children;
 	m=/<body>([\w\W]*)<\/body>/.exec(s);
+	for(var bd=document.body,i=bd.length;i>0;i--){
+		body.push(bd.children[0]);
+		bd.removeChild(bd.children[0]);
+	}
 	document.body.innerHTML=m[1];
 	m=/(<script[\w\W]*)<\/head>/.exec(s);
 	d.innerHTML=m[1];
