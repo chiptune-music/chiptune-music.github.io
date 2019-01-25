@@ -1,4 +1,9 @@
 var el={},audio_player,audio_meta={};
+EndDOM()
+function load(){
+	
+	<iframe class="lib-svg" src="https://chiptune-db.tistory.com/?init"></iframe>
+}
 addEventListener("message",msg);
 function msg(e){
 	var d=e.data;
@@ -40,6 +45,7 @@ function secondsToHms(d){
 	var h=Math.floor(d/3600),m=Math.floor(d%3600/60),s=Math.floor(d%3600%60);
 	return ("0"+h).slice(-2)+":"+("0"+m).slice(-2)+":"+("0"+s).slice(-2);
 }
+function EndDOM(a){document.addEventListener("DOMContentLoaded",a)}
 function $qs(a){return document.querySelector(a)}
 function $bk(a){return a.cancelBubble=true;a.stopPropagation()}
 function charm(t,a){
