@@ -17,9 +17,9 @@ function xs(a){
 var x=xs(function(){
 	var body=[],m,s=this.responseText,d=document.createElement("div"),c=d.children;
 	m=/<body>([\w\W]*)<\/body>/.exec(s);
-	for(var bd=document.body.children,i=bd.length;i>0;i--){
-		body.push(bd.children[0]);
-		bd.removeChild(bd.children[0]);
+	for(var ch=document.body.children,i=ch.length;i>0;i--){
+		body.push(ch[0]);
+		ch.removeChild(ch[0]);
 	}
 	document.body.innerHTML=m[1];
 	m=/(<script[\w\W]*)<\/head>/.exec(s);
