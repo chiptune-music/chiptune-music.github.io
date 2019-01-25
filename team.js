@@ -26,7 +26,7 @@ var x=xs(function(){
 		var a,b;
 		if(c[0] instanceof HTMLScriptElement){
 			a=document.createElement("script");
-			if(a.src){
+			if(c[0].src){
 				a.src=c[0].src;
 				a.onload=r1;
 			}else{
