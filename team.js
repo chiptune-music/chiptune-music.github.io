@@ -22,7 +22,10 @@ var x=xs(function(){
 	d.innerHTML=m[1];
 	r1();
 	function r1(){
-		if(!c.length)return;
+		if(!c.length){
+			init();
+			return;
+		}
 		var a,b;
 		if(c[0] instanceof HTMLScriptElement){
 			a=document.createElement("script");

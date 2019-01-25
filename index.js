@@ -1,5 +1,6 @@
 var el={},audio_player,audio_meta={};
-EndDOM(function(){
+EndDOM(init);
+function init(){
 	var frm=document.createElement("div");
 	frm.innerHTML='<iframe class="lib-svg" src="https://chiptune-db.tistory.com/?init"></iframe>';
 	frm=frm.firstChild;
@@ -32,7 +33,7 @@ EndDOM(function(){
 			audio_player.onstop=state_stop;
 		}
 	}
-});
+}
 function t_toHref(a){
 	return a.toLowerCase().replace(/[^a-z0-9_\s]/g,"").replace(/[\s-]+/g,"-").replace(/^[\s\W]+|[\s\W]+&/,"")
 }
