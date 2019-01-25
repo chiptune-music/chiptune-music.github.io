@@ -25,8 +25,10 @@ var x=xs(function(){
 		if(!c.length)return;
 		if(c[0] instanceof HTMLScriptElement){
 			var a=document.createElement("script");
-			a.src=c[0].src;
-			a.onload=r1;
+			if(a.src){
+				a.src=c[0].src;
+				a.onload=r1;
+			}else a.text=c[0].text;
 			d.removeChild(c[0]);
 			document.head.appendChild(a);
 		}else{
