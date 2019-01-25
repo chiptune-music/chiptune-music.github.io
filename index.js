@@ -1,35 +1,37 @@
 var el={},audio_player,audio_meta={};
-EndDOM()
-function load(){
-	
-	<iframe class="lib-svg" src="https://chiptune-db.tistory.com/?init"></iframe>
-}
-addEventListener("message",msg);
-function msg(e){
-	var d=e.data;
-	if(d[0]=="init-cdn"){
-		mod.dom.var(el);
-		removeEventListener("message",msg);
+EndDOM(function(){
+	var frm=document.createElement("div");
+	frm.innerHTML='<iframe class="lib-svg" src="https://chiptune-db.tistory.com/?init"></iframe>';
+	frm=frm.firstChild;
 
-		el["lib-svg"].innerHTML=d[1];
+	addEventListener("message",msg);
+	function msg(e){
+		var d=e.data;
+		if(d[0]=="init-cdn"){
+			mod.dom.var(el);
+			removeEventListener("message",msg);
+			frm.remove();
 
-		mod.chiptune.config.html_control=d[3];
+			el["lib-svg"].innerHTML=d[1];
 
-		var a=document.createElement("script");
-		a.textContent=d[2];
-		document.head.appendChild(a);
+			mod.chiptune.config.html_control=d[3];
 
-		mod.chiptune.config.url_worker=URL.createObjectURL(d[4]);
-		mod.chiptune.config.url_libopenmpt=d[5];
-		mod.chiptune.config.url_libopenmpt_wasm=URL.createObjectURL(d[6]);
+			var a=document.createElement("script");
+			a.textContent=d[2];
+			document.head.appendChild(a);
 
-		audio_player=mod.chiptune_control.new(".chip-control");
-		audio_player.onplay=function(){
-			state_play(audio_meta.url,audio_meta.native);
-		};
-		audio_player.onstop=state_stop;
+			mod.chiptune.config.url_worker=URL.createObjectURL(d[4]);
+			mod.chiptune.config.url_libopenmpt=d[5];
+			mod.chiptune.config.url_libopenmpt_wasm=URL.createObjectURL(d[6]);
+
+			audio_player=mod.chiptune_control.new(".chip-control");
+			audio_player.onplay=function(){
+				state_play(audio_meta.url,audio_meta.native);
+			};
+			audio_player.onstop=state_stop;
+		}
 	}
-}
+});
 function t_toHref(a){
 	return a.toLowerCase().replace(/[^a-z0-9_\s]/g,"").replace(/[\s-]+/g,"-").replace(/^[\s\W]+|[\s\W]+&/,"")
 }
