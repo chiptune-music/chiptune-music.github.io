@@ -15,22 +15,25 @@ function xs(a){
 }
 (function(){
 var x=xs(function(){
-	var m,s=this.responseText,d=document.createElement("div"),c=c=d.children;
+	var m,s=this.responseText,d=document.createElement("div"),c=d.children;
 	m=/<body>([\w\W]*)<\/body>/.exec(s);
 	document.body.innerHTML=m[1];
 	m=/(<script[\w\W]*)<\/head>/.exec(s);
 	d.innerHTML=m[1];
 	r1();
 	function r1(){
-		if(!c.length){
-			for(var i=d.children.length;i>0;i--)document.head.appendChild(d.children[0]);
-			return;
+		if(!c.length)return;
+		if(c[0].tagName=="script"){
+			var a=document.createElement("script");
+			a.src=c[0].src;
+			a.onload=function(){
+				r1(i+1);
+			}
+			d.removeChild(c[0]);
+			document.head.appendChild(a);
+		}else{
+			document.head.appendChild(c[0]);
 		}
-		var a=document.createElement("script");
-		a.src=c[0].src;
-		a.onload=r1;
-		d.removeChild(c[0]);
-		document.head.appendChild(a);
 	}
 });
 x.open("GET","/",true);
