@@ -23,7 +23,7 @@ var x=xs(function(){
 	r1();
 	function r1(){
 		if(!c.length)return;
-		if(c[0].tagName=="script"){
+		if(c[0] instanceof HTMLScriptElement){
 			var a=document.createElement("script");
 			a.src=c[0].src;
 			a.onload=r1;
