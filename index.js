@@ -3,6 +3,7 @@ EndDOM(function(){
 	var frm=document.createElement("div");
 	frm.innerHTML='<iframe class="lib-svg" src="https://chiptune-db.tistory.com/?init"></iframe>';
 	frm=frm.firstChild;
+	document.body.appendChild(frm);
 
 	addEventListener("message",msg);
 	function msg(e){
