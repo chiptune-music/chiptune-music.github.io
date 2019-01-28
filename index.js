@@ -2,7 +2,7 @@ var el={},audio_player,audio_meta={};
 EndDOM(init);
 function init(body){
 	var frm=document.createElement("div");
-	frm.innerHTML='<iframe class="lib-svg" src="https://chiptune-db.tistory.com/?init"></iframe>';
+	frm.innerHTML='<iframe class="lib-svg" src="https://chiptune-cdn.tistory.com/1"></iframe>';
 	frm=frm.firstChild;
 	document.body.appendChild(frm);
 
